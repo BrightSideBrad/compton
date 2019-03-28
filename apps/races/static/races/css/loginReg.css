@@ -1,0 +1,21 @@
+h1{
+    text-align: center;
+}
+.form1{
+    min-width: 35%;
+    max-width: 100%;
+    display: inline-block;
+    margin-left: 100px;
+    vertical-align: top;
+}
+.form2{
+    min-width: 35%;
+    max-width: 100%;
+    display: inline-block;
+    margin-left: 100px;
+    vertical-align: top;
+}
+p{
+    color:red;
+    text-align: center;
+}

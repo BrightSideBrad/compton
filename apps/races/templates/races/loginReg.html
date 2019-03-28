@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% load static %}
+    <link rel='stylesheet' type='text/css' href="{% static 'races/css/loginReg.css' %}">
+    <title>Log and Reg</title>
+</head>
+<body>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+                <a class="navbar-brand" href="#">Compton Time and Measure</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                
+        </nav>
+    <div class='container-fluid'>
+        <h1>Login and Registration</h1>
+        <br>
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+        <br>
+        <hr>
+        <form class='form1' method = 'POST' action = '/login'>
+            {% csrf_token %}
+                <h3>LOGIN</h3>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" name = 'logemail' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted"></small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" name = 'LPassW' id="exampleInputPassword1" placeholder="Password">
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+        <form class='form2' method = 'POST' action = '/registration'>
+            {% csrf_token %}
+                <h3>REGISTER</h3>
+                
+            <div class="form-group">
+                <label>First Name</label>
+                    <input type="text" class="form-control" name = 'first_name' placeholder="First Name">
+            </div>
+            <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" class="form-control" name = 'last_name' placeholder="Last Name">
+            </div>
+            <div class="form-group">
+                    
+                    <label>Email address</label>
+                    <input type="text" class="form-control" aria-describedby="emailHelp" name = 'email' placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted"></small>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" name = 'password' placeholder="Password">
+            </div>
+            <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" class="form-control" name = 'conpw' placeholder="Password">
+            </div>
+            
+            
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+</body>
+</html>
